@@ -13,4 +13,13 @@ export async function getTicketsType(req: AuthenticatedRequest, res: Response) {
   }
 }
 
+export async function getTickets(req: AuthenticatedRequest, res: Response) {
+  const { userId } = req;
+  try {
+    const result = await ticketService.getTicketById(userId);
+    return res.status(200).send(result);
+  } catch (error) {
+    return res.sendStatus(404);
+  }
+}
 
