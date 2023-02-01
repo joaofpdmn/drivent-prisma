@@ -9,7 +9,7 @@ async function findPaymentByTicketId(ticketId: number) {
     });
 }
 
-async function createPayment(ticketId: number, data: PaymentData) {
+async function createPayment(ticketId: number, data: ) {
     return prisma.payment.create({
         data: {
           ticketId,
@@ -18,7 +18,7 @@ async function createPayment(ticketId: number, data: PaymentData) {
       });
 }
 
-type PaymentData = Omit<Payment, "id" | "createdAt" | "updatedAt">
+
 
 const paymentRepository = {
     findPaymentByTicketId,
