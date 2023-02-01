@@ -10,9 +10,15 @@ async function findWithAddressByUserId(userId: number) {
   });
 }
 
+<<<<<<< HEAD
 async function findEnrollment(enrollmentId: number) {
   return prisma.enrollment.findFirst({
     where: { id: enrollmentId },
+=======
+async function findById(enrollmentId: number) {
+  return prisma.enrollment.findFirst({
+    where: { id: enrollmentId }
+>>>>>>> 6146a32e37cdc6604449613bf54b8daaf83717bb
   });
 }
 
@@ -36,7 +42,11 @@ export type UpdateEnrollmentParams = Omit<CreateEnrollmentParams, "userId">;
 const enrollmentRepository = {
   findWithAddressByUserId,
   upsert,
+<<<<<<< HEAD
   findEnrollment
+=======
+  findById,
+>>>>>>> 6146a32e37cdc6604449613bf54b8daaf83717bb
 };
 
 export default enrollmentRepository;
